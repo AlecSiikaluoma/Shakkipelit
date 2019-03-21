@@ -1,12 +1,19 @@
 # Shakkipelit
 
-Shakkipelit voidaan tallenta .pgn muotoon. Tiedoston alussa määritellään pelin tiedot esim. päivämäärä, valkoisen pelaajan nimi, mustan pelaajan nimi, tilaisuus ja pelin tulos. Tämän jälkeen siirrot esitetään muodossa: ”1. e4(valkoinen) e5(musta) 2. …”. 
+Ohjelmalla voi selata shakkipelejä mitä ohjelmaan on syötetty. Ohjelmassa on näkymä, jossa listataan kaikki pelit. Listasta pääsee kyseisen pelin tietoihin, josta näkyy tarkemmat tiedot esim. kaikki siirrot. Näkystä pääsee myös muuttamaan pelin tietoja.
 
-Sovellukseen olisi tarkoitus pystyä latamaan näitä pelejä ja mahdollisesti ladata tässä muodossa niitä omalle koneelle jonka jälkeen ne voidaan ladata shakkiohjelmaan. 
+Sovelluksen pääsivulta pääsee myös näkymään, jossa pelin voi lisätä.
 
 Toiminnot:
 - uuden pelin syöttäminen
 - pelien selailu
-- pelien lataus
-- pelien haku esim. aloituksen tai siirtojen mukaan
-- samassa muodossa olevan pelin lukeminen järjestelmään
+- pelien muokkaus
+- pelien haku käyttäjän, aloituksen, sijainnin tai päivämäärän mukaan
+
+## Tietokannan rakenne
+
+Tietokannassa säilytetään pelit "game" -taulussa. On myös "opening" taulu, jossa säilytetään tunnetut aloitukset. Nämä kaksi taulua voidaan liitää keskenään. 
+
+## Jatkokehitys
+
+Sovellusta voisi laajentaa lukemaan .pgn muotoisia pelitiedostaja ja peli näkymään voisi lisätä jonkin yksinkertaisen JavaScript shakkilaudan, jossa peli voitaisiin visualisoida.
