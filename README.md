@@ -10,6 +10,8 @@ Toiminnot:
 - pelien muokkaus
 - pelien haku käyttäjän, aloituksen, sijainnin tai päivämäärän mukaan
 
+Sovellus sijaitsee herokussa osoitteessa: https://shakkipelit.herokuapp.com/games
+
 ## Tietokannan rakenne
 
 Tietokannassa säilytetään pelit "game" -taulussa. On myös "opening" taulu, jossa säilytetään tunnetut aloitukset. Nämä kaksi taulua voidaan liitää keskenään. 
