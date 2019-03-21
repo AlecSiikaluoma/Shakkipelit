@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Players</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Result</th>
+      <th></th>
+    </tr>
+    {% for game in games %}
+    <tr>
+      <td>{{ game.white_player }} - {{ game.black_player }}</td>
+      <td>{{ game.game_date }}</td>
+      <td>{{ game.location }}</td>
+      <td>{{ game.result }}</td>
+      <td><a href="{{ url_for('game_view', game_id=game.id) }}">View games</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

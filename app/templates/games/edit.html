@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<form method="PUT" action="{{ url_for('game_edit', game_id=game.id) }}">
+  <span>Lopputulos (1 valkoinen voitti, 0 tasapeli, -1 mustavoitti)</span>
+  <input type="text" name="result" value="{{ game.result }}"/><br/>
+  <span>Valkoisen pelaajan nimi</span>
+  <input name="whitePlayer" value="{{ game.white_player }}"/><br/>
+  <span>Mustan pelaajan nimi</span>
+  <input name="blackPlayer" value="{{ game.black_player }}"/><br/>
+  <span>Aloitus</span>
+  <input type="text" name="opening" value="{{ game.opening }}"/><br/>
+  <span>Päivämäärä</span>
+  <input type="text" name="game_date" value="{{ game.game_date }}"/><br/>
+  <span>Pelin sijainti</span>
+  <input type="text" name="game_location" value="{{ game.game_location }}"/><br/>
+  <span>Siirrot</span>
+  <textarea type="text" name="moves">{{ game.moves }}</textarea><br/>
+  <input type="submit" value="Edit this game"/>
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+  <p>{{ game.result }}</p>
+  <p>{{ game.whitePlayer }}</p>
+  <p>{{ game.blackPlayer }}</p>
+  <p>{{ game.opening }}</p>
+  <p>{{ game.game_date }}</p>
+  <p>{{ game.game_location }}</p>
+  <p>{{ game.moves }}</p>
+  <br/>
+  <a href="{{ url_for('game_edit_view', game_id=game.id) }}">Edit this game</a>
+{% endblock %}
