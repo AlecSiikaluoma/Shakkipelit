@@ -2,20 +2,82 @@
   
 {% block body %}
 <form method="POST" action="{{ url_for('games_create') }}">
-  <span>Lopputulos (1 valkoinen voitti, 0 tasapeli, -1 mustavoitti)</span>
-  <input type="text" name="result"/><br/>
-  <span>Valkoisen pelaajan nimi</span>
-  <input type="text" name="whitePlayer"/><br/>
-  <span>Mustan pelaajan nimi</span>
-  <input type="text" name="blackPlayer"/><br/>
-  <span>Aloitus</span>
-  <input type="text" name="opening"/><br/>
-  <span>Päivämäärä</span>
-  <input type="text" name="game_date"/><br/>
-  <span>Pelin sijainti</span>
-  <input type="text" name="game_location"/><br/>
-  <span>Siirrot</span>
-  <textarea type="text" name="moves"></textarea><br/>
-  <input type="submit" value="Add a new game"/>
+  <table>
+    <tr>
+      <td>
+        {{ form.white_player.label }}
+      </td>
+      <td>
+        {{ form.white_player }}
+      </td>
+      <td>
+        <ul>
+          {% for error in form.white_player.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.black_player.label }}
+      </td>
+      <td>
+        {{ form.black_player }}
+      </td>
+      <td>
+        <ul>
+          {% for error in form.black_player.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.result.label }}
+      </td>
+      <td>
+        {{ form.result }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.opening.label }}
+      </td>
+      <td>
+        {{ form.opening }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.game_date.label }}
+      </td>
+      <td>
+        {{ form.game_date }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.game_location.label }}
+      </td>
+      <td>
+        {{ form.game_location }}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.moves.label }}
+      </td>
+      <td>
+        {{ form.moves }}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <input type="submit" value="Add a new game"/>
+      </td>
+    </tr>
+  </table>
 </form>
 {% endblock %}

@@ -3,10 +3,10 @@
 {% block body %}
   <table>
     <tr>
-      <th>Players</th>
-      <th>Date</th>
-      <th>Location</th>
-      <th>Result</th>
+      <th>Pelaajat</th>
+      <th>Päivämäärä</th>
+      <th>Sijainti</th>
+      <th>Tulos</th>
       <th></th>
     </tr>
     {% for game in games %}
@@ -15,7 +15,7 @@
       <td>{{ game.game_date }}</td>
       <td>{{ game.location }}</td>
       <td>{{ game.result }}</td>
-      <td><a href="{{ url_for('game_view', game_id=game.id) }}">View games</a>
+      <td><a href="{{ url_for('game_view', game_id=game.id) }}">Katso pelin tiedot</a>
       </td>
     </tr>
     {% endfor %}

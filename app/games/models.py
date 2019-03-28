@@ -15,6 +15,8 @@ class Game(db.Model):
     opening = db.Column(db.String(144), nullable=True)
     moves = db.Column(db.String(1000), nullable=True)
 
+    account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
+
     def __init__(self, white_player, black_player, game_date, game_location='', result='', opening='', moves=''):
         self.white_player = white_player
         self.black_player = black_player
