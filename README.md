@@ -14,7 +14,7 @@ Sovellus sijaitsee herokussa osoitteessa: https://shakkipelit.herokuapp.com/game
 
 ## Käyttötapaukset
 
-[Tarkempi kuva käyttötapauksista](https://github.com/AlecSiikaluoma/Shakkipelit/blob/master/documentation/kayttotapaukset.md)
+[Tarkempi kuvaus käyttötapauksista](https://github.com/AlecSiikaluoma/Shakkipelit/blob/master/documentation/kayttotapaukset.md)
 
 ## Tietokannan rakenne
 
