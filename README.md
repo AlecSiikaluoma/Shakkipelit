@@ -14,7 +14,9 @@ Sovellus sijaitsee herokussa osoitteessa: https://shakkipelit.herokuapp.com/game
 
 ## Tietokannan rakenne
 
-Tietokannassa säilytetään pelit "game" -taulussa. On myös "opening" taulu, jossa säilytetään tunnetut aloitukset. Nämä kaksi taulua voidaan liitää keskenään. 
+Tietokannassa säilytetään pelit "game" -taulussa. On myös "opening" taulu, jossa säilytetään tunnetut aloitukset. Nämä kaksi taulua voidaan liitää keskenään.
+
+[Tietokantakaavio](https://github.com/AlecSiikaluoma/Shakkipelit/blob/master/documentation/tietokantakaavio.jpg)
 
 ## Jatkokehitys
 
