@@ -56,3 +56,6 @@ def games_index():
     return render_template("games/list.html", games = Game.query.all())
 
 
+@app.route("/games/search", methods=["GET"])
+def find_games():
+    return render_template("games/list.html", games = Game.find_games(request.args.get("query")))

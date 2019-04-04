@@ -31,3 +31,18 @@ class User(db.Model):
 
     def is_authenticated(self):
         return True
+
+    @staticmethod
+    def find_users_games_with_opening(opening):
+        stmt = text("SELECT Account.id, Account.name FROM Account"
+                    " LEFT JOIN Game ON Game.account_id = Account.id"
+                    " WHERE Game.opening LIKE %" + opening + "%"
+                    " GROUP BY Account.id"
+                    " HAVING COUNT(Task.id) > 0")
+        res = db.engine.execute(stmt)
+  
+        response = []
+        for row in res:
+            response.append({"id":row[0], "name":row[1]})
+
+        return response

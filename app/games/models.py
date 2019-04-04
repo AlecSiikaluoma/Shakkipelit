@@ -1,4 +1,5 @@
 from app import db
+from sqlalchemy.sql import text
 
 class Game(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,3 +26,16 @@ class Game(db.Model):
         self.result = result
         self.opening = opening
         self.moves = moves
+
+    @staticmethod    
+    def find_games(query):
+        stmt = text("SELECT * FROM Game"
+                    " LEFT JOIN Account ON Game.account_id = Account.id"
+                    " WHERE (white_player||black_player||game_date||game_location||opening||moves) LIKE '%{0}%';".format(query))
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append(row)
+
+        return response
