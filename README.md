@@ -12,9 +12,15 @@ Toiminnot:
 
 Sovellus sijaitsee herokussa osoitteessa: https://shakkipelit.herokuapp.com/games
 
+## Käyttötapaukset
+
+[Tarkempi kuvaus käyttötapauksista](https://github.com/AlecSiikaluoma/Shakkipelit/blob/master/documentation/kayttotapaukset.md)
+
 ## Tietokannan rakenne
 
-Tietokannassa säilytetään pelit "game" -taulussa. On myös "opening" taulu, jossa säilytetään tunnetut aloitukset. Nämä kaksi taulua voidaan liitää keskenään. 
+Tietokannassa säilytetään pelit "game" -taulussa. On myös "opening" taulu, jossa säilytetään tunnetut aloitukset. Nämä kaksi taulua voidaan liitää keskenään.
+
+[Tietokantakaavio](https://github.com/AlecSiikaluoma/Shakkipelit/blob/master/documentation/tietokantakaavio.jpg)
 
 ## Jatkokehitys
 
