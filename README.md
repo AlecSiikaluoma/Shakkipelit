@@ -7,6 +7,7 @@ Sovelluksen pääsivulta pääsee myös näkymään, jossa pelin voi lisätä.
 Toiminnot:
 - uuden pelin syöttäminen
 - pelien selailu
+- pelien hakeminen sijainnin, pelaajien, aloituksen mukaan
 - pelien muokkaus
 - pelien haku käyttäjän, aloituksen, sijainnin tai päivämäärän mukaan
 
