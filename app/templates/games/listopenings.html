@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th style="padding-right: 10px;">Aloitus</th>
+      <th style="padding-right: 10px;">Variaatio</th>
+      <th style="padding-right: 10px;">Siirrot</th>
+      <th></th>
+    </tr>
+    {% for opening in openings %}
+    <tr>
+      <td style="padding-right: 10px;"><a href="{{ url_for('openings_games', name=opening.name) }}">{{ opening.name }}</a></td>
+      <td style="padding-right: 10px;">{{ opening.main_variation }}</td>
+      <td style="padding-right: 10px;">{{ opening.moves }}</td>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -1,6 +1,6 @@
 from app import app, db
 from flask import redirect, render_template, request, url_for
-from app.games.models import Game
+from app.games.models import Game, Opening
 from app.games.forms import GameForm
 from flask_login import login_required, current_user
 
@@ -55,6 +55,13 @@ def games_create():
 def games_index():
     return render_template("games/list.html", games = Game.query.all())
 
+@app.route("/openings", methods=["GET"])
+def openings_index():
+    return render_template("games/listopenings.html", openings = Opening.query.all())
+
+@app.route("/opening/games", methods=["GET"])
+def openings_games():
+    return render_template("games/list.html", games=Opening.find_games(request.args.get("name")))
 
 @app.route("/games/search", methods=["GET"])
 def find_games():

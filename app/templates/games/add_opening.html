@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<form method="POST" action="{{ url_for('opening_create') }}">
+  <table>
+    <tr>
+      <td>
+        {{ form.white_player.label }}
+      </td>
+      <td>
+        {{ form.white_player }}
+      </td>
+      <td>
+        <ul>
+          {% for error in form.white_player.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.black_player.label }}
+      </td>
+      <td>
+        {{ form.black_player }}
+      </td>
+      <td>
+        <ul>
+          {% for error in form.black_player.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.result.label }}
+      </td>
+      <td>
+        {{ form.result }}
+      </td>
+      <td>
+        <ul>
+          {% for error in form.result.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+      <td colspan="3">
+        <input type="submit" value="Add a new opening"/>
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
