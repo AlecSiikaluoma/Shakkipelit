@@ -55,7 +55,7 @@ class Opening(db.Model):
     def find_games(name):
         stmt = text("SELECT * FROM Opening"
                     " LEFT JOIN Game ON Game.opening LIKE Opening.name"
-                    " WHERE opening LIKE '%{0}%';".format(query))
+                    " WHERE opening LIKE \"%{0}%\";".format(name))
         res = db.engine.execute(stmt)
 
         response = []

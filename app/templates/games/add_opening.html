@@ -1,18 +1,18 @@
 {% extends "layout.html" %}
   
 {% block body %}
-<form method="POST" action="{{ url_for('opening_create') }}">
+<form method="POST" action="{{ url_for('openings_create') }}">
   <table>
     <tr>
       <td>
-        {{ form.white_player.label }}
+        {{ form.name.label }}
       </td>
       <td>
-        {{ form.white_player }}
+        {{ form.name }}
       </td>
       <td>
         <ul>
-          {% for error in form.white_player.errors %}
+          {% for error in form.name.errors %}
           <li>{{ error }}</li>
           {% endfor %}
         </ul>
@@ -20,14 +20,14 @@
     </tr>
     <tr>
       <td>
-        {{ form.black_player.label }}
+        {{ form.main_variation.label }}
       </td>
       <td>
-        {{ form.black_player }}
+        {{ form.main_variation }}
       </td>
       <td>
         <ul>
-          {% for error in form.black_player.errors %}
+          {% for error in form.main_variation.errors %}
           <li>{{ error }}</li>
           {% endfor %}
         </ul>
@@ -35,14 +35,14 @@
     </tr>
     <tr>
       <td>
-        {{ form.result.label }}
+        {{ form.moves.label }}
       </td>
       <td>
-        {{ form.result }}
+        {{ form.moves }}
       </td>
       <td>
         <ul>
-          {% for error in form.result.errors %}
+          {% for error in form.moves.errors %}
           <li>{{ error }}</li>
           {% endfor %}
         </ul>

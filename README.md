@@ -13,6 +13,11 @@ Toiminnot:
 
 Sovellus sijaitsee herokussa osoitteessa: https://shakkipelit.herokuapp.com/games
 
+### Testitunnukset
+
+Nimi:hello
+Salasana:world
+
 ## Käyttötapaukset
 
 [Tarkempi kuvaus käyttötapauksista](https://github.com/AlecSiikaluoma/Shakkipelit/blob/master/documentation/kayttotapaukset.md)

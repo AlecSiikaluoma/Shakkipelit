@@ -1,7 +1,7 @@
 from app import app, db
 from flask import redirect, render_template, request, url_for
 from app.games.models import Game, Opening
-from app.games.forms import GameForm
+from app.games.forms import GameForm, OpeningForm
 from flask_login import login_required, current_user
 
 @app.route("/games/new/")
@@ -58,6 +58,26 @@ def games_index():
 @app.route("/openings", methods=["GET"])
 def openings_index():
     return render_template("games/listopenings.html", openings = Opening.query.all())
+
+
+@app.route("/openings/", methods=["POST"])
+def openings_create():
+    form = OpeningForm(request.form)
+
+    if not form.validate():
+        return render_template("games/add_opening.html", form = form)
+
+    t = Opening(form.name.data, form.main_variation.data, form.moves.data)
+
+    db.session().add(t)
+    db.session().commit()
+  
+    return redirect(url_for("games_index"))
+
+@app.route("/openings/new/")
+@login_required
+def openings_form():
+    return render_template("games/add_opening.html", form = OpeningForm())
 
 @app.route("/opening/games", methods=["GET"])
 def openings_games():
