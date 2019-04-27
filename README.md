@@ -31,3 +31,8 @@ Tietokannassa säilytetään pelit "game" -taulussa. On myös "opening" taulu, j
 ## Jatkokehitys
 
 Sovellusta voisi laajentaa lukemaan .pgn muotoisia pelitiedostaja ja peli näkymään voisi lisätä jonkin yksinkertaisen JavaScript shakkilaudan, jossa peli voitaisiin visualisoida.
+
+## Ohjeet
+
+[Käyttöohje](https://github.com/AlecSiikaluoma/Shakkipelit/blob/master/documentation/kayttoohje.md)
+[Asennusohje](https://github.com/AlecSiikaluoma/Shakkipelit/blob/master/documentation/asennusohje.md)
