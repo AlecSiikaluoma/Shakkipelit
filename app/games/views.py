@@ -43,6 +43,7 @@ def game_delete(game_id):
     return render_template("games/list.html", games = Game.query.all())
 
 @app.route("/games/", methods=["POST"])
+@login_required
 def games_create():
     form = GameForm(request.form)
 
@@ -69,6 +70,7 @@ def openings_index():
 
 
 @app.route("/openings/", methods=["POST"])
+@login_required
 def openings_create():
     form = OpeningForm(request.form)
 
@@ -83,6 +85,7 @@ def openings_create():
     return redirect(url_for("games_index"))
 
 @app.route("/openings/new/")
+@login_required
 @login_required
 def openings_form():
     return render_template("games/add_opening.html", form = OpeningForm())
