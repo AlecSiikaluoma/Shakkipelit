@@ -34,6 +34,14 @@ def game_edit(game_id):
 
 	return redirect(url_for("game_view", game_id=game_id))
 
+@app.route("/games/<game_id>/delete", methods=["POST"])
+@login_required
+def game_delete(game_id):
+    Game.query.filter_by(id=game_id).delete()
+    db.session().commit()
+
+    return render_template("games/list.html", games = Game.query.all())
+
 @app.route("/games/", methods=["POST"])
 def games_create():
     form = GameForm(request.form)
