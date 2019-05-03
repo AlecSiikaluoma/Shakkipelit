@@ -24,3 +24,17 @@ class Opening(db.Model):
             response.append(row)
 
         return response
+
+    @staticmethod
+    def find_games_with_win_rates():
+        stmt = text("select * from opening op" 
+            " join (select o.name as name, count(case g.result when 1 then 1 else null end) as wins, count(case g.result when 0 then 1 else null end) as loss, count(case g.result when -1 then 1 else null end) as draw"
+            " from game g join opening o on g.opening=o.name group by o.name)"
+            " ap on op.name=ap.name;")
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append(row)
+
+        return response

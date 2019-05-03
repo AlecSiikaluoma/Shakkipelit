@@ -8,7 +8,7 @@ from flask_login import login_required, current_user
 
 @app.route("/openings", methods=["GET"])
 def openings_index():
-    return render_template("games/listopenings.html", openings = Opening.query.all())
+    return render_template("games/listopenings.html", openings = Opening.find_games_with_win_rates())
 
 
 @app.route("/openings/", methods=["POST"])
