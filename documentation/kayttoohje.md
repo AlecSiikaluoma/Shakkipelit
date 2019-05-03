@@ -16,4 +16,4 @@ Näkymästä voi lisätä uusia aloituksia ja sitten näiden avulla voi organiso
 
 ## Listaa aloitukset
 
-Listataan aloitukset.
+Listataan aloitukset. Aloituksen nimeällä painamalla päästään listaukseen, joissa on pelit jotka ovat alkaneet täten. Aloitus listauksessa näytetään myös tilastoja voitoista/tappioista/tasapeleistä yhden monimutkaisemman yhteenvetokyselyn avulla.
