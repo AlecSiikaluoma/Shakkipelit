@@ -23,9 +23,9 @@ def game_edit_view(game_id):
 @app.route("/games/<game_id>/edit", methods=["POST"])
 @login_required
 def game_edit(game_id):
-	game = Game.query.filter_by(id=game_id)
-	game.whitePlayer = request.form.get("whitePlayer")
-	game.blackPlayer = request.form.get("blackPlayer")
+	game = Game.query.get(game_id)
+	game.white_player = request.form.get("whitePlayer")
+	game.black_player = request.form.get("blackPlayer")
 	game.game_date = request.form.get("game_date")
 	game.game_location = request.form.get("game_location")
 	game.result = request.form.get("result")
