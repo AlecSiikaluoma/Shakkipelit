@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
   
 {% block body %}
-<form method="PUT" action="{{ url_for('game_edit', game_id=game.id) }}">
+<form method="POST" action="{{ url_for('game_edit', game_id=game.id) }}">
   <span>Lopputulos (1 valkoinen voitti, 0 tasapeli, -1 mustavoitti)</span>
   <input type="text" name="result" value="{{ game.result }}"/><br/>
   <span>Valkoisen pelaajan nimi</span>

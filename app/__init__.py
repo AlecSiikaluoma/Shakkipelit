@@ -21,6 +21,8 @@ db = SQLAlchemy(app)
 from app import views
 from app.games import models
 from app.games import views
+from app.openings import models
+from app.openings import views
 
 from app.auth import models 
 from app.auth import views
